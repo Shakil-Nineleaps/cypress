@@ -38,10 +38,29 @@ describe('left part', () => {
             expect(str).to.equal('Hello shakil, share this practice page and share your knowledge')
         })
     });
-    it.only('radio button', () => {
+    it('radio button', () => {
         cy.visit('https://rahulshettyacademy.com/AutomationPractice/')
         cy.get('input[value="radio1"]').check()
         // cy.get('input[value="radio1"]').uncheck()
     });
-    
+    it.only('mouse hover', () => {
+        cy.visit('https://rahulshettyacademy.com/AutomationPractice/')
+        // cy.get('#mousehover').trigger('mouseover')
+        // cy.contains('Top').click({force :  true})
+        // cy.url().should('include','top')
+        // cy.get('#mousehover').invoke('show')
+        // cy.contains('Top').click({force:true})
+        // cy.contains('Top').click({force:true})
+        // cy.contains('Language')
+    cy.get('.tableFixHead').find('tr td:nth-child(1)').each(($el,index,$list)=>{
+        const data=$el.text()
+            if(data.includes('Alex')){
+                cy.get('.tableFixHead').find('tr td:nth-child(2)').eq(index).next().then((cost)=>{
+                    const data1=cost.text()
+                    cy.log(data1) 
+                })
+            }
+        })
+     });
+    // preceding sibling and following siblings(padhna hai)  
 });

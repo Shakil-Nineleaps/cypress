@@ -17,11 +17,15 @@ describe('task', () => {
         cy.get('#angular').trigger('mousedown')
         cy.get('#msg').trigger('mouseover').trigger('mouseup',{force:true})
     });
-    it.skip('double click', () => {
+    it.only('double click', () => {
         cy.visit('https://demo.guru99.com/test/simple_context_menu.html')
         cy.xpath("//button[contains(text(),'Double')]").dblclick()
+        // for right click 
+        cy.get('.context-menu-one').rightclick()
+        cy.get('.context-menu-icon-delete > span').click()
+
     });
-    it.only('save', () => {
+    it('save', () => {
         cy.visit("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
         cy.get('input[name="username"]').type("Admin")
         cy.get('input[name="password"]').type("admin123")
