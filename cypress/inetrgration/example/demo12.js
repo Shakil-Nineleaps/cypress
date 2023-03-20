@@ -43,7 +43,7 @@ describe('left part', () => {
         cy.get('input[value="radio1"]').check()
         // cy.get('input[value="radio1"]').uncheck()
     });
-    it.only('mouse hover', () => {
+    it('mouse hover', () => {
         cy.visit('https://rahulshettyacademy.com/AutomationPractice/')
         // cy.get('#mousehover').trigger('mouseover')
         // cy.contains('Top').click({force :  true})
