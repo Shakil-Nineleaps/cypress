@@ -16,9 +16,10 @@ describe('THis is my first trest case', () => {
         cy.get('.oxd-userdropdown-tab > .oxd-icon').click()
         cy.get('.oxd-dropdown-menu').find('.oxd-userdropdown-link').should('have.length',4)
         ////home work promises
-        cy.get('.oxd-dropdown-menu').find('.oxd-userdropdown-link').eq(3).contains('Logout').then((lastlink)=>{
-        const linkname=lastlink.test()
-    cy.log(linkname)
-    cy.wrap(lastlink).click()})
+        cy.get('.oxd-dropdown-menu').find('.oxd-userdropdown-link').eq(3).contains('Logout').then((lastlink) => {
+            const linkname = lastlink.test()
+            cy.log(linkname)
+            cy.wrap(lastlink).click()
+        })
     }); 
 });
