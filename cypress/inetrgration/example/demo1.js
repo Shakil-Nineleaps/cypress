@@ -2,7 +2,7 @@
 // in a simple js Promises
 let promise=new Promise((resolve,reject)=>{
     let a=2+1
-    if(a==3){
+    if(a===3){
         resolve('promise fullfilled')
     }
     else {
